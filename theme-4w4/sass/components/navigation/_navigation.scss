@@ -1,0 +1,188 @@
+.main-navigation {
+	display: block;
+	width: 100vw;
+
+	ul {
+		display: none;
+		position: relative;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+		background-color: #F2F2F2;
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 100%;
+			left: -100px;
+			transition: clip-path .5s ease-in-out;
+			clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+			z-index: 99999;
+			
+			li {
+				a {
+					padding-left: 20px;
+				}
+
+				/* 
+				&:hover > ul,
+				&.focus > ul {
+					display: block;
+					left: auto;
+				} 
+				*/
+			}
+
+			a {
+				width: 100%;
+			}
+
+			/* 
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			} 
+			
+			*/
+		}
+		
+		/*fin du menu*/
+
+
+		li:hover>ul,
+		li.focus>ul {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+		}
+	
+		li {
+			position: relative;
+		}
+
+		a[href="#"]::after {
+			position: absolute;
+			content: '+';
+			width: 100%;
+			height: 100%;
+			top: 0;
+			bottom: 0;
+			left: 90%;
+			right: 0;
+		}
+
+		li.focus a[href='#']::after,
+		a[href='#']:hover::after {
+			content: "-";
+		}
+	}
+
+
+	a {
+		display: block;
+		text-decoration: none;
+		padding: .5rem;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {}
+}
+/*	----------------------------------------------
+Bouton burger
+----------------------------------------------	*/
+
+.menu-toggle {
+	padding: 0rem;
+	border: 0;
+	margin: 0 auto;
+	transition: transform .25s;
+	transform: rotate(0);
+}
+
+/* menu-toggle:hover,
+menu-toggle:focus {
+    background: #fafafa;
+} */
+
+.menu-toggle:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.menu-toggle:active {
+    transform: scale(0.99);
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+	z-index: 20;
+}
+
+/*	-------------------------------------------------------------------------------------------------------
+Version Tablet
+-------------------------------------------------------------------------------------------------------		*/
+@media screen and (min-width: 37.5em) {
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul, 
+	.main-navigation.toggled ul {
+		display: flex;
+		width: 100vw;
+		justify-content: space-around;
+
+		a[href="#"]::after {
+			display: none;
+		}
+
+		a:hover {
+			color: black;
+		}
+
+		li:hover ul {
+			display: block;
+			position: absolute;
+
+			&:hover{
+				color: black;
+			}
+		}
+
+		ul {
+			display: block;
+			width: 400px;
+		}
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+	}
+
+	.nav-links {
+		display: flex;
+	}
+
+	.nav-previous {
+		flex: 1 0 50%;
+	}
+
+	.nav-next {
+		text-align: end;
+		flex: 1 0 50%;
+	}
+}

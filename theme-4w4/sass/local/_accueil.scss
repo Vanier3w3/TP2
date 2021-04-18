@@ -1,0 +1,171 @@
+
+body.home {
+   background-color: $color__background-body;    
+   width: 100vw;
+   height: 100vh;
+   overflow-x: hidden;
+
+   #primary {
+      margin: 0;
+      width: 100vw;
+
+      h1 {
+         text-align: center;
+         color: white;
+         text-decoration: underline $color__background-body;
+         @include media-desktop {
+            text-decoration: underline #F26444;
+         }
+
+      }
+
+      @include media-desktop {
+         margin: 0 2rem;
+      }
+   }
+}
+
+body.home::after {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   content: '';
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: #F26444;
+   z-index: -1;
+   clip-path: polygon(83% 0, 0 0, 0 100%, 43% 100%);
+   @include media-desktop {
+         clip-path: polygon(0 0, 100vw 0%, 100vw 50%, 0 50%);
+      }
+}
+
+#page {
+   margin: 0;
+}
+
+.site-title {
+   display: flex;
+   width: 100vw;
+   font-size:  clamp(2rem, #{"-0.875rem + 8.333vw"}, 4rem);
+   margin-bottom: 0;
+   justify-content: center;
+   a {
+      text-decoration: none;
+      font-weight: bold;
+   }
+}
+
+.site-description {
+   font-size:  clamp(.9rem, #{"-0.875rem + 8.333vw"}, 4rem);
+   margin-bottom: 0;
+}
+
+/*----------------------------------------------------------------------------------
+Liste des bloc de cours par type_de_cours
+---------------------------------------------------------------------------------- */
+
+.home .cours {
+   display: flex;
+   flex-direction: column;
+
+   h2 {
+      width: 95vw;
+      padding-left: 10%;
+      border-top: 2px solid white;
+      font-style: italic ;
+      font-weight: bolder;
+      font-size: 2rem;
+      position: sticky;
+      top: -1px;
+      z-index: 10;
+   }
+
+   section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      article {
+         display: flex;
+         position: relative;
+         flex-direction: column;
+         justify-content: space-between;
+         align-items: center;
+         text-align: center;
+         margin: 1% 0;
+         padding: 1rem 0;
+
+         p {
+            position: relative;
+            margin: .4rem;
+            font-size: 1rem;
+            transition: right 1s;
+         }
+
+         p:nth-child(2) {
+            color: $color__background-body;
+         }
+
+
+         a {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: white;
+            border-radius: 5%;
+            width: 100vw;
+            height: 100%;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+         }
+
+         a:hover {
+            background-color: #F26444;
+
+            p:nth-child(1) {
+               right: 0;
+            }
+            p:nth-child(3) {
+               right: 0;
+            }
+         }
+
+         @include media-desktop {
+            p:nth-child(1) {
+               right: -80%;
+            }
+            p:nth-child(2) {
+               font-size: 2rem;
+            }
+            p:nth-child(3) {
+               right: 80%;
+            }
+            a {
+               width: 100%;
+            }
+            &{
+               padding: 1rem;
+            }
+         }
+      }
+   }
+   @include media-tablet {
+      article {
+         width: 45%;
+         margin: 1%;
+      }
+   }
+   @include media-desktop {
+      article{
+         width: 29%;
+         margin: 1%;
+      }
+ 
+   }
+}
