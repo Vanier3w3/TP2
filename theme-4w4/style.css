@@ -1500,4 +1500,46 @@ La barre du millieu
   display: block;
   margin: .5rem .2rem;
 }
+
+/* Local/galerie
+--------------------------------------------- */
+.galerie {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 500px;
+  height: 251px;
+  perspective: 1000px;
+  margin: 1%;
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-content {
+  transform: rotateY(180deg);
+}
+
+.thumbnail,
+.info {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  transform: rotateY(180deg);
+  color: whitesmoke;
+  background-color: #F26444;
+  text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */
