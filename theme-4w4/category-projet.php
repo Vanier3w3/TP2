@@ -24,19 +24,9 @@ get_header();
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
-				the_post(); ?>
-				<div class="card">
-					<div class="card-content">
-						<div class="thumbnail">
-						<?php the_post_thumbnail( 'medium' ); ?>
-						</div>
-						<a href="<?php echo get_permalink(); ?>" class="info">
-							<h2><?php echo get_the_title(); ?></h2>
-							<p><?php echo wp_trim_words(get_the_content(), 50) ?></p>
-						</a>
-					</div>
-				</div>
-			<?php endwhile;?>
+				the_post();
+				get_template_part( 'template-parts/content', 'projet' ); 
+			endwhile;?>
 			</section>
 			
 		<?php endif; ?>
