@@ -83,6 +83,15 @@ Liste des bloc de cours par type_de_cours
       z-index: 10;
    }
 
+   .nouvelles section {
+      p {
+         width: 50%;
+      }
+      img {
+         width: 50%;
+      }
+   }
+
    section {
       display: flex;
       flex-direction: row;

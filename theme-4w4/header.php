@@ -19,8 +19,11 @@
 
 	<?php wp_head(); ?>
 </head>
+<?php if (is_front_page()) : ?>
+<?php endif; ?>
+<body <?php body_class(is_front_page() || is_category('Projet') ? 'no-sidebar' : ''); ?>>
 
-<body <?php body_class(); ?>>
+
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'theme-4w4' ); ?></a>
@@ -49,9 +52,9 @@
 		<?php
 		if (is_front_page()) :?>
 		<section class="carrousel">
-				<div><img src="http://e1734174.webdev.cmaisonneuve.qc.ca/4w4/wp-content/uploads/2021/353_Infographic_Triangle_R10V2_Branded-01.png"></div>
-				<div><img src="http://e1734174.webdev.cmaisonneuve.qc.ca/4w4/wp-content/uploads/2021/scrumframework-1.png"></div>
-				<div><img src="http://e1734174.webdev.cmaisonneuve.qc.ca/4w4/wp-content/uploads/2021/too-many-meetings-in-scrum.jpg"></div>
+				<div><img src="https://e1734174.webdev.cmaisonneuve.qc.ca/4W4/wp-content/uploads/2021/353_Infographic_Triangle_R10V2_Branded-01.png"></div>
+				<div><img src="https://e1734174.webdev.cmaisonneuve.qc.ca/4W4/wp-content/uploads/2021/scrumframework-1.png"></div>
+				<div><img src="https://e1734174.webdev.cmaisonneuve.qc.ca/4W4/wp-content/uploads/2021/too-many-meetings-in-scrum.jpg"></div>
 		</section>
 		<div class="boutton">
 			<nav id="un" class="boutton-clip"><a href="#"></a></nav>

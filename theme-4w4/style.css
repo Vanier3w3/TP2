@@ -661,6 +661,30 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+.site {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-areas: "header header" "main sidebar" "footer footer";
+}
+
+.site-header {
+  grid-area: header;
+}
+
+.site-main {
+  grid-area: main;
+  overflow: hidden;
+  /* Resolves issue with <pre> elements forcing full width. */
+}
+
+.widget-area {
+  grid-area: sidebar;
+}
+
+.site-footer {
+  grid-area: footer;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -1187,6 +1211,14 @@ Liste des bloc de cours par type_de_cours
   position: sticky;
   top: -1px;
   z-index: 10;
+}
+
+.home .cours .nouvelles section p {
+  width: 50%;
+}
+
+.home .cours .nouvelles section img {
+  width: 50%;
 }
 
 .home .cours section {

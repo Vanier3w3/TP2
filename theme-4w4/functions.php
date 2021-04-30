@@ -133,6 +133,17 @@ function theme_4w4_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'theme-4w4' ),
+			'id'            => 'footer-1',
+			'description'   => esc_html__( 'Add widgets here.', 'theme-4w4' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'theme_4w4_widgets_init' );
 
@@ -147,13 +158,15 @@ function theme_4w4_scripts() {
 	wp_enqueue_script( 'theme-4w4-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'theme-4w4-burger', get_template_directory_uri() . '/js/burger.js', array(), _S_VERSION, true );
 
-	wp_register_script( 'theme-4w4-carrousel', get_template_directory_uri() . '/js/carrousel.js', array(), _S_VERSION, true );
+	wp_register_script( 'theme-4w4-carrousel', get_template_directory_uri() . '/js/carrousel.js', array(),  _S_VERSION, true );
 	wp_register_script( 'theme-4w4-slider', get_template_directory_uri() . '/js/slider.js', array(), _S_VERSION, true );
+	wp_register_script( 'theme-4w4-rest-api', get_template_directory_uri() . '/js/rest_api.js', array(), _S_VERSION, true );
 	
 
 	if (is_front_page()) {
 		wp_enqueue_script( 'theme-4w4-carrousel' );
 		wp_enqueue_script( 'theme-4w4-slider' );
+		wp_enqueue_script( 'theme-4w4-rest-api' );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
