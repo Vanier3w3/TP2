@@ -1,8 +1,8 @@
 
 (function(){
-    let boutton = document.getElementById('bout_nouvelles')
+    let id_categories = 10;
+    //let boutton = document.getElementById('bout_nouvelles')
     let nouvelles = document.querySelector('.nouvelles section')
-    console.log(boutton.id)
 
     //boutton.addEventListener('mousedown', monAjax)
     window.addEventListener('load', monAjax)
@@ -11,7 +11,7 @@
     {
         let maRequete = new XMLHttpRequest();
         console.log(maRequete)
-        maRequete.open('GET', 'https://e1734174.webdev.cmaisonneuve.qc.ca/4W4/wp-json/wp/v2/posts?categories=5');
+        maRequete.open('GET', monObjJS.URLDomaine + '/wp-json/wp/v2/posts?categories=10');
         maRequete.onload = function () {
             if(maRequete.status >= 200 && maRequete.status < 400){
                 let data = JSON.parse(maRequete.responseText);
@@ -32,4 +32,34 @@
         }
         maRequete.send()
     }
+        // Ajout des nouvelles
+
+    boutton_ajout = document.getElementById("bout-rapide")
+    boutton_ajout.addEventListener("mousedown", function(){
+        let monArticle = {
+            "title" :   document.querySelector('.admin-rapid [name="title"]').value,
+            "content" :  document.querySelector('.admin-rapid [name="content"]').value,
+            "status" : "publish",
+            "categories" : [10]
+        }
+        console.log(JSON.stringify(monArticle))
+        let creerArticle = new XMLHttpRequest()
+        creerArticle.open("POST", monObjJS.URLDomaine + '/wp-json/wp/v2/posts?categories=10')
+        creerArticle.setRequestHeader("X-WP-Nonce", monObjJS.nonce)
+        creerArticle.setRequestHeader("Content-Type", "application/json;charset=UTF8-8")
+        creerArticle.send(JSON.stringify(monArticle))
+        creerArticle.onreadystatechange = function() {
+            if(creerArticle.readyState == 4) {
+                if(creerArticle.status == 201) {
+                    document.querySelector('.admin-rapid [name="title"]').value = ''
+                    document.querySelector('.admin-rapid [name="content"]').value = ''
+                }
+                else {
+                    alert ('Erreur reessayez')
+                }
+            }
+        }
+    })
+
+
 }())
