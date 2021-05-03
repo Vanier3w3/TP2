@@ -52,7 +52,7 @@ get_header();
 										Formulaire d'ajout d'un article de categorie "Nouvelles"
 						-------------------------------------------------------------------------->
 			<section class="admin-rapid">
-				<h3>Ajouter un article de categorie "Nouvelles"</h3>
+				<h2>Ajouter un article de categorie "Nouvelles"</h2>
 				<input type="text" name="title" placeholder="Titre">
 				<textarea name="content" placeholder="Contenue"></textarea>
 				<button id="bout-rapide">Creer une Nouvelle</button>
@@ -74,8 +74,6 @@ get_footer();
 
 function convertirTableau(&$tPropriete)
 {
-
-
 	$tPropriete['titre'] = get_the_title(); 
 	$tPropriete['sigle'] = substr($tPropriete['titre'], 0, 7);
 	$tPropriete['nbHeure'] = substr($tPropriete['titre'],-4,3);

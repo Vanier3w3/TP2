@@ -741,7 +741,6 @@ body {
   float: left;
   position: absolute;
   top: 100%;
-  left: -100px;
   transition: clip-path .5s ease-in-out;
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   z-index: 99999;
@@ -1213,11 +1212,7 @@ Liste des bloc de cours par type_de_cours
   z-index: 10;
 }
 
-.home .cours .nouvelles section p {
-  width: 50%;
-}
-
-.home .cours .nouvelles section img {
+.home .cours .nouvelles section {
   width: 50%;
 }
 
@@ -1278,13 +1273,13 @@ Liste des bloc de cours par type_de_cours
 
 @media (min-width: 1200px) {
   .home .cours section article p:nth-child(1) {
-    right: -80%;
+    right: -100%;
   }
   .home .cours section article p:nth-child(2) {
     font-size: 2rem;
   }
   .home .cours section article p:nth-child(3) {
-    right: 80%;
+    right: 100%;
   }
   .home .cours section article a {
     width: 100%;
@@ -1577,4 +1572,25 @@ La barre du millieu
 
 /* Local/formulaire
 --------------------------------------------- */
+.admin-rapid {
+  width: 60vw;
+}
+
+.admin-rapid h3 {
+  width: 100%;
+}
+
+.admin-rapid #bout-rapide {
+  background-color: azure;
+}
+
+.admin-rapid [name=title],
+.admin-rapid [name=content] {
+  padding: 10px;
+  margin: 10px;
+}
+
+.admin-rapid [name=title] {
+  width: 60vw;
+}
 /*# sourceMappingURL=style.css.map */

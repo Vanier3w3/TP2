@@ -84,12 +84,7 @@ Liste des bloc de cours par type_de_cours
    }
 
    .nouvelles section {
-      p {
-         width: 50%;
-      }
-      img {
-         width: 50%;
-      }
+      width: 50%;
    }
 
    section {
@@ -147,13 +142,13 @@ Liste des bloc de cours par type_de_cours
 
          @include media-desktop {
             p:nth-child(1) {
-               right: -80%;
+               right: -100%;
             }
             p:nth-child(2) {
                font-size: 2rem;
             }
             p:nth-child(3) {
-               right: 80%;
+               right: 100%;
             }
             a {
                width: 100%;
