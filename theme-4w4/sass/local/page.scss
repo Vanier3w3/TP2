@@ -1,0 +1,27 @@
+.site-title {
+   display: flex;
+   width: 100vw;
+   font-size:  clamp(2rem, #{"-0.875rem + 8.333vw"}, 4rem);
+   margin-bottom: 0;
+   justify-content: center;
+   a {
+      text-decoration: none;
+      font-weight: bold;
+   }
+}
+
+.site-description {
+   font-size:  clamp(.9rem, #{"-0.875rem + 8.333vw"}, 4rem);
+   margin-bottom: 0;
+}
+
+.entry-header, .page-header {
+   color: #F26444;
+
+   h1 {
+      font-size: 3rem;
+   } 
+   h2 {
+      font-size: 2rem;
+   } 
+}

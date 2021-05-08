@@ -663,8 +663,15 @@ textarea {
 --------------------------------------------------------------*/
 .site {
   display: grid;
-  grid-template-columns: 80% 20%;
-  grid-template-areas: "header header" "main sidebar" "footer footer";
+  grid-template-columns: 100%;
+  grid-template-areas: "header header" "main main" "sidebar sidebar" "footer footer";
+}
+
+@media (min-width: 1200px) {
+  .site {
+    grid-template-columns: 80% 20%;
+    grid-template-areas: "header header" "main sidebar" "footer footer";
+  }
 }
 
 .site-header {
@@ -679,6 +686,8 @@ textarea {
 
 .widget-area {
   grid-area: sidebar;
+  background-color: #F26444;
+  padding: 8%;
 }
 
 .site-footer {
@@ -791,7 +800,6 @@ body {
   height: 100%;
   top: 0;
   bottom: 0;
-  left: 90%;
   right: 0;
 }
 
@@ -1592,5 +1600,37 @@ La barre du millieu
 
 .admin-rapid [name=title] {
   width: 60vw;
+}
+
+/* Local/page
+--------------------------------------------- */
+.site-title {
+  display: flex;
+  width: 100vw;
+  font-size: clamp(2rem, -0.875rem + 8.333vw, 4rem);
+  margin-bottom: 0;
+  justify-content: center;
+}
+
+.site-title a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.site-description {
+  font-size: clamp(0.9rem, -0.875rem + 8.333vw, 4rem);
+  margin-bottom: 0;
+}
+
+.entry-header, .page-header {
+  color: #F26444;
+}
+
+.entry-header h1, .page-header h1 {
+  font-size: 3rem;
+}
+
+.entry-header h2, .page-header h2 {
+  font-size: 2rem;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,30 @@
+.site-title {
+  display: flex;
+  width: 100vw;
+  font-size: clamp(2rem, -0.875rem + 8.333vw, 4rem);
+  margin-bottom: 0;
+  justify-content: center;
+}
+
+.site-title a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.site-description {
+  font-size: clamp(0.9rem, -0.875rem + 8.333vw, 4rem);
+  margin-bottom: 0;
+}
+
+.entry-header, .page-header {
+  color: #F26444;
+}
+
+.entry-header h1, .page-header h1 {
+  font-size: 3rem;
+}
+
+.entry-header h2, .page-header h2 {
+  font-size: 2rem;
+}
+/*# sourceMappingURL=page.css.map */

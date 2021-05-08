@@ -42,12 +42,17 @@ get_header();
 				<?php if (in_array($tPropriete['typeCours'], ["Web", "Jeu", "Spécifique"])) : 
 						get_template_part( 'template-parts/content', 'cours-carrousel' ); 
 						$chaine_bouton_radio .= '<input class="rad-carrousel"  type="radio" name="rad-carrousel">';
+
+				elseif (in_array($tPropriete['typeCours'], ["Projet"])) :
+					get_template_part( 'template-parts/content', 'projet' ); 
+
 				else :		
 						get_template_part( 'template-parts/content', 'cours-article' ); 
 				endif;	
 				$precedent = $tPropriete['typeCours'];
 			endwhile;?>
 			</section> <!-- fin section cours -->
+			<?PHP if (current_user_can('administrator')) : ?>
 						<!------------------------------------------------------------------------
 										Formulaire d'ajout d'un article de categorie "Nouvelles"
 						-------------------------------------------------------------------------->
@@ -57,7 +62,7 @@ get_header();
 				<textarea name="content" placeholder="Contenue"></textarea>
 				<button id="bout-rapide">Creer une Nouvelle</button>
 			</section>
-
+				<?php endif;?>
 			<section class="nouvelles">
 				<section></section>
 			</section>
