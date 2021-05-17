@@ -1,6 +1,5 @@
 
 (function(){
-    let id_categories = 10;
     //let boutton = document.getElementById('bout_nouvelles')
     let nouvelles = document.querySelector('.nouvelles section')
 
