@@ -14,9 +14,11 @@ global $tPropriete;
 		<div class="thumbnail">
 		<?php the_post_thumbnail( 'medium' ); ?>
 		</div>
-		<a href="<?php echo get_permalink(); ?>" class="info">
-			<h3><?php echo get_the_title(); ?></h3>
+		<div class="info">
+			<a href="<?php echo get_permalink(); ?>" >
+				<h3><?php echo get_the_title(); ?></h3>
+			</a>
 			<p><?php echo wp_trim_words(get_the_content(), 50) ?></p>
-		</a>
+		</div>
 	</div>
 </div>
