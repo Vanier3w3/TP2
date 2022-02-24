@@ -1,0 +1,32 @@
+
+(function(){
+    let boutton1 = document.getElementById('un')
+    let boutton2 = document.getElementById('deux')
+    let boutton3 = document.getElementById('trois')
+    let carrousel = document.querySelector('.carrousel')
+
+    boutton1.addEventListener('mousedown', function(){
+        carrousel.style.transform = "translateX(0)"
+
+        boutton1.classList.add('boutton-clip')
+        boutton2.classList.remove('boutton-clip')
+        boutton3.classList.remove('boutton-clip')
+
+    })
+
+    boutton2.addEventListener('mousedown', function(){
+        carrousel.style.transform = "translateX(-50vw)"
+        
+        boutton1.classList.remove('boutton-clip')
+        boutton2.classList.add('boutton-clip')
+        boutton3.classList.remove('boutton-clip')
+    })
+
+    boutton3.addEventListener('mousedown', function(){
+        carrousel.style.transform = "translateX(-100vw)"
+        
+        boutton1.classList.remove('boutton-clip')
+        boutton2.classList.remove('boutton-clip')
+        boutton3.classList.add('boutton-clip')
+    })
+}())
